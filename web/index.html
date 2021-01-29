@@ -2,275 +2,1392 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
-    <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>IMSOLO.PRO WEB</title>
-    <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/index.css" rel="stylesheet">
-    <link href="assets/css/gallery.css" rel="stylesheet">
-    <script src="https://legendmod.ml/jquery.min.js"></script>	
-    <script src="assets/js/quadtree.js"></script>
-    <script src="assets/js/main_out.js"></script>
-    <script src="assets/js/skinhandler.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Ăn càng nhiều càng to, Ăn càng no càng khỏe, Ăn được nhiều người khác là bá chủ">
+<meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="fb:app_id" content="481345105364837" />
+<meta property="og:title" content="Cá lớn nuốt cá bé" />
+<meta property="og:description" content="Ăn càng nhiều càng to, Ăn càng no càng khỏe, Ăn được nhiều người khác là bá chủ" />
+<meta property="og:url" content="http://Choi.One" />
+<meta property="og:image" content="http://Choi.One/img/1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta name="propeller" content="d8f1d9c52bf1354614267e6babbf73be" />
+<title>Cá lớn nuốt cá bé</title>
+<link id="favicon" rel="icon" type="image/png" href="favicon-32x32.png" />
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+<link href="bootstrap.css" rel="stylesheet">
+<link href="iconochive.css" rel="stylesheet">
+<link href="font-awesome.css" rel="stylesheet">
+<style>
+.cs {
+    margin-left: 4px;
+    margin-bottom: 5px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    /* border-radius: 8px; 
+	 line-height: 51px;*/
+    border-style: outset !important;
+    border: 1px solid #d3d3d3 !important;
+    border-color: #000 !important;
+    background-color: #fff;
+    display: inline-block;
+   width: 51px;
+   height: 51px;
+    font-size: 30px;
+   
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+	    padding: 0px;
+	
+}
+
+button:focus {outline:none !important}
+.alert {
+    margin-bottom: 5px;}
+</style>
+<style>
+	
+	
+	
+	.signup-container {
+    text-align: center;
+}
+
+
+.signup-content {
+    background: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    border-radius: 2px;
+    width: 500px;
+    display: inline-block;
+    margin-top: 30px;
+    vertical-align: middle;
+    position: relative;    
+    padding: 35px;
+}
+
+.social-btn {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.social-btn img {
+    height: 32px;
+    float: left;
+    margin-top: 10px;
+}
+
+.social-btn.google {
+    margin-top: 7px;
+}
+
+.social-btn.facebook img {
+    height: 24px;
+    margin-left: 3px;
+}
+
+.social-btn.github img {
+    height: 24px;
+    margin-left: 3px;
+}
+
+.login-link {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+}
+
+.signup-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.65);
+}
+	
+	
+	
+	
+	
+	
+	
+	.login-container {
+    text-align: center;
+}
+
+
+.login-content {
+    background: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    border-radius: 2px;
+    width: 500px;
+    display: inline-block;
+    margin-top: 30px;
+    vertical-align: middle;
+    position: relative;    
+    padding: 35px;
+}
+
+.social-btn {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.social-btn img {
+    height: 32px;
+    float: left;
+    margin-top: 10px;
+}
+
+.social-btn.google {
+    margin-top: 7px;
+}
+
+.social-btn.facebook img {
+    height: 24px;
+    margin-left: 3px;
+}
+
+.social-btn.github img {
+    height: 24px;
+    margin-left: 3px;
+}
+
+.signup-link {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+}
+
+.login-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.65);
+}
+	
+	* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(0,0,0,.80);
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; 
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/**
+  Link
+**/
+
+a {
+  color: #2098f3;
+  text-decoration: none;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #40a9ff;
+  text-decoration: none;
+}
+
+/**
+  Button
+**/
+
+
+.social-btn-custom {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 0 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  height: 45px;
+  line-height: 45px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  position: relative;
+  color: rgba(0,0,0,.65);
+  background-color: transparent;
+  border-color: #e8e8e8;
+  outline: none;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-lg {
+  padding: 0 30px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2098f3;
+    border-color: #2098f3;  
+} 
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #52c41a;
+    border-color: #52c41a;    
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
+  background-color: #52c41a;
+  border-color: #52c41a;
+}
+
+
+.btn-link {
+  border: none;
+  height: 34px;
+  padding: 0 15px;
+}
+
+.btn-link:hover {
+  background-color: rgba(158,158,158, 0.20);
+}
+
+
+/**
+  Form
+**/
+
+.form-item {
+	margin-bottom: 18px;
+}
+
+.form-item .btn {
+    cursor: pointer;
+}
+
+.form-item label {
+    font-size: 0.85em;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: rgba(0,0,0,.65);
+}
+
+.form-control {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  padding: 4px 11px;
+  width: 100%;
+  height: 45px;
+  font-size: 0.87em;
+  line-height: 45px;
+  color: rgba(0,0,0,.80);
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  transition: all .3s;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+
+.form-control:hover, .form-control:focus, .form-control:active {
+  border-color: #40a9ff;
+  outline: 0;
+  border-right-width: 1px!important;
+}
+
+.form-control:focus, .form-control:active {
+  box-shadow: 0 0 0 2px rgba(24,144,255,.2);    
+}
+
+.form-control.invalid {
+  border-color: #f5222d;
+}
+
+.form-control.invalid:focus, .form-control.invalid:active {
+  box-shadow: 0 0 0 2px rgba(245,34,45,.2);        
+} 
+
+.form-control[disabled], fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: #f6f8fa;
+  opacity: 1;
+}
+
+.form-label {
+  margin-bottom: 10px;
+}
+
+/**
+  Or separator
+**/
+
+.or-separator {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 1em;    
+}
+
+.or-text {
+  position: absolute;
+  left: 46%;
+  top: 0;
+  background: #fff;
+  padding: 10px;
+  color: rgba(0,0,0,.45);
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	body{padding:0;margin:0;overflow:hidden;}
+
+ #chat_textbox {
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        bottom: 10px;
+        background: rgba(0, 0, 0, .2);
+        border: 0px;
+        outline: none;
+        color: #FFF;
+        height: 30px;
+        text-indent: 12px;
+        left: 10px;
+        width: 300px;
+		
+    }
+
+    #chat_textbox:focus {
+        background: rgba(0, 0, 0, .5);
+    }
+#canvas{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;}form{margin-bottom:0px;}.btn-play,.btn-settings,.btn-spectate,.btn-play-guest,.btn-login,
+.btn-logout{display:block;float:left;height:35px;}.btn-spectate,
+.btn-logout{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}
+.btn-upload{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}
+a#info{
+               color: red;
+            }
+#helloContainer[data-logged-in="0"] .btn-play-guest{margin-left:5px;width:135px;}#helloContainer[data-logged-in="0"] .btn-login{margin-left:5px;width:135px;}#helloContainer[data-logged-in="0"] .agario-exp-bar,#helloContainer[data-logged-in="0"] .progress-bar-star,#helloContainer[data-logged-in="0"] #agario-main-buttons .agario-profile,#helloContainer[data-logged-in="0"] .btn-play{display:none;}#helloContainer[data-logged-in="0"] .btn-logout{display:none;}#helloContainer[data-logged-in="1"] .btn-play{margin-left:5px;width:275px;}#helloContainer[data-logged-in="1"] .btn-play-guest{display:none;}#helloContainer[data-logged-in="1"] .btn-login{display:none;}.btn-settings{width:40px;}.btn-spectate{display:block;float:right;}#adsBottom{position:absolute;left:0;right:0;bottom:0;}#adsBottomInner{margin:0px auto;width:728px;height:90px;border:5px solid white;border-radius:5px 5px 0px 0px;background-color:#FFFFFF;box-sizing:content-box;}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center;}
+
+#nick{width:74%;float:left;}
+#skinname{width:1%;float:left;display: none;}
+
+#locationKnown #region{width:100%;}#locationUnknown #region{margin-bottom:15px;}#gamemode{width:25%;float:right;}.agario-panel{display:inline-block;width:350px;background-color:#FFFFFF;margin:2px;border-radius:10px;padding:5px 15px 5px 15px;vertical-align:top;}.agario-side-panel{display:inline-block;width:220px;}#helloContainer,.connecting-panel{position:absolute;top:50%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}#a300x250{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}.agario-exp-bar{height:30px;position:relative;border:2px solid #01612B;}.agario-exp-bar .progress-bar{background-color:#338833;border-radius:0px 4px 4px 0px;-webkit-transition:none;transition:none;}.agario-exp-bar .progress-bar-text{font-size:12pt;cursor:default;opacity:0.75;color:#FFF;text-align:center;line-height:26px;text-shadow:0px 0px 3px 
+
+
+#000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;position:absolute;top:0;bottom:0;left:0;right:0;font-family:'Ubuntu',sans-serif;}
+
+.progress{    margin-bottom: 2px;}
+
+#agario-results-table{width:100%;}#agario-results-table th{text-align:center;font-size:8pt;}#agario-results-table td{text-align:center;color:#999;font-size:11pt;padding-bottom:15px;}.progress-bar-star{position:absolute;top:-13px;right:-16px;width:50px;height:50px;background-image:url("img/star.png");background-size:cover;-webkit-transform:rotate3d(0,0,1,10deg);transform:rotate3d(0,0,1,10deg);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:default;color:#FFF;text-align:center;line-height:55px;font-size:12pt;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;font-family:'Ubuntu',sans-serif;}.tooltip-inner{max-width:300px;}
+.agario-profile-panel{padding:15px 15px 15px 15px;}
+.agario-profile-panel 
+.agario-profile-picture{float:left;display:block;width:64px;height:64px;border-radius:5px;border:2px solid #CCC;margin-right:6px;}.agario-profile-panel 
+.agario-profile-name-container{float:left;display:table;width:120px;height:64px;position:relative;}
+.agario-profile-panel .agario-profile-name-container 
+.agario-profile-name{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}
+.agario-profile-id{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}
+#helloContainer[data-has-account-data="0"] 
+.agario-profile-panel{display:none;}
+.agario-shop-panel{display:none;}
+
+.agario-party,.agario-party-0,.agario-party-1,.agario-party-2,.agario-party-3,.agario-party-4,.agario-party-5,.agario-party-6{display:none;}#helloContainer[data-gamemode=":party"] .agario-party{display:block;position:relative;}#helloContainer[data-gamemode=":party"] .agario-promo{display:none;}#helloContainer[data-party-state="0"] .agario-party-0{display:block;}#helloContainer[data-party-state="1"] .agario-party-1{display:block;}#helloContainer[data-party-state="2"] .agario-party-2{display:block;}#helloContainer[data-party-state="3"] .agario-party-3{display:block;}#helloContainer[data-party-state="4"] .agario-party-4{display:block;}#helloContainer[data-party-state="5"] .agario-party-5{display:block;}#helloContainer[data-party-state="6"] .agario-party-6{display:block;}.partyToken{margin-bottom:10px;}.side-container{vertical-align:top;display:inline-block;width:224px;}.cell-spinner{display:block;margin:0;}.creating-party-text{position:absolute;cursor:default;top:0;bottom:0;left:0;right:0;width:100%;height:100%;text-align:center;color:#FFF;font-size:24px;line-height:100px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;}.agario-results-0,.agario-results-1,.agario-results-2{display:none;}#helloContainer[data-results-state="0"] .agario-results-0{display:block;}#helloContainer[data-results-state="1"] .agario-results-1{display:block;}#helloContainer[data-results-state="2"] .agario-results-2{display:block;}#options>label{display:block;width:94px;float:left;}#stats{position:relative;width:350px;height:581px;padding:0px 0px 300px 0px;overflow:hidden;}#statsPelletsContainer,#statsTimeAliveContainer,#statsHighestMassContainer,#statsTimeLeaderboardContainer,#statsPlayerCellsEatenContainer,#statsTopPositionContainer{position:absolute;width:100px;height:100px;}#statsPelletsContainer{top:30px;left:50px;}#statsHighestMassContainer{top:30px;right:50px;}#statsTimeAliveContainer{top:85px;left:50px;}#statsTimeLeaderboardContainer{top:85px;right:50px;}#statsPlayerCellsEatenContainer{top:140px;left:50px;}#statsTopPositionContainer{top:140px;right:50px;}#statsPellets{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}#statsText{position:absolute;top:0;bottom:0;left:0;right:0;line-height:100px;font-size:23px;}#statsSubtext{position:absolute;bottom:0;left:0;right:0;line-height:60px;font-size:12px;color:#000;text-align:center;}#statsChartText{position:absolute;left:20px;bottom:250px;line-height:40px;font-size:40px;}#statsChartText,#statsText{cursor:default;color:#444;text-align:center;font-weight:bold;}#statsContinue{position:absolute;left:25px;right:25px;width:300px;bottom:295px;}#statsGraph{position:absolute;bottom:350px;left:0px;right:0px;opacity:0.4;}#s300x250{position:absolute;bottom:10px;left:25px;right:25px;width:300px;height:250px;}.tosBox{z-index:1000;position:absolute;bottom:0;right:0;background-color:#FFF;border-radius:5px 0px 0px 0px;padding:5px 10px;}
+#imgpos{position:fixed;right:10px;bottom:20px;}#ttvpos{position:fixed;left:370px;bottom:10px;}
+#adbg{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}
+
+
+
+.mini-map{display:block;position:fixed}
+
+
+
+
+.mini-map{bottom:20px;right:10px;width:200px;height:200px;
+
+z-index:11}
+
+.btn-shop:hover{background-color:#954700;border-color:#954700;color:#FFF;font-weight:700}
+.circle{border-radius:50%;display:block;color:#FFF;text-align:center}
+.circle.big{width:32px;height:32px;position:absolute;top:5px;left:5px;line-height:30px;font-size:15px}
+.circle.green{border:2px solid #55b300;background:#69dd00}
+
+.hidenskins{display:none}
+.skins{border-radius:50%}
+.showskins .themeSelected {
+    border: 5px solid orange;
+}
+
+</style>
+<script src="jquery.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="jquery.iframetracker.js"></script>
+
+
+
+<script>
+
+        var hasBottomAd = false;
+
+var dfp = null;
+var dfpBottom = null;
+var dfpStats = null;
+
+window['aa'] = [];
+window['ab'] = [];
+
+if(window.location.search.indexOf('fb') != -1){
+	dfp = '/53945695/agar_facebook/agar/300x250';
+	dfpStats = '/53945695/agar_facebook/agar/300x250_Stats';
+}else{
+	if(window.ABGroup < 70){
+		dfp = '/53945695/agar/300x250_CRL';
+		dfpStats = '/53945695/agar/300x250_CRL_stats';
+	}else if(window.ABGroup < 80){
+		dfp = '/53945695/agar/300x250_CRM';
+		dfpStats = '/53945695/agar/300x250_CRM_stats';
+	}else{
+		dfp = '/53945695/agar/300x250_CPL';
+		dfpStats = '/53945695/agar/300x250_CPL_stats';
+	}
+	dfpBottom = '/53945695/agar/728x90';
+}
+
+
+if(window.innerHeight > 1960 && dfpBottom != null){
+	hasBottomAd = true;
+}
+
+
+
+</script>
 </head>
-<body onload="setserver('imsolo.pro:2102');skinHandler()">
-    <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none;">
-        <div id="gallery-content">
-            <div id="gallery-header">Free Skins - Gallery</div>
-            <button id="gallery-youtubers" class="youtuberSkinsBtn-gallery" onclick="showYoutuberSkins()">Youtuber Skins - Gallery</button>
-            <div id="gallery-body"></div>
-        </div>
-    </div>
-    <div id="gallery-yt" onclick="if (event.target == this) this.hide()" style="display: none;">
-        <div id="gallery-yt-content">
-            <div id="gallery-yt-header">Youtuber Skins</div>
-            <div id="gallery-yt-body"></div>
-        </div>
-    </div>
-    <div id="settings-window" onclick="if (event.target == this) this.hide()" style="display: none;">
-        <div id="settings-window-content">
-            <div id="settings-window-header">Imsolo Web Settings</div>
-            <div id="settings-window-body" style="overflow-y: scroll;overflow-x: hidden;">
-                <div>
-                    <h2>Settings</h2>
-                    <label class="control control-checkbox">Show skins<input id="showSkins" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Names<input id="showNames" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Dark Theme<input id="darkTheme" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Colors<input id="showColor" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Mass<input id="showMass" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Chat<input id="showChat" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Minimap<input id="showMinimap" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Position<input id="showPosition" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Map & Cell Borders<input id="showBorder" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Grid<input id="showGrid" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Enable Zoomout<input id="moreZoom" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Fill Skins<input id="fillSkin" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Show Background Sectors<input id="backgroundSectors" type="checkbox" /><div class="control_indicator"></div></label>
-                    <label class="control control-checkbox">Enable Smooth Animations<input id="jellyPhysics" type="checkbox" /><div class="control_indicator"></div></label>
-                    <h2>Macros</h2>
-                    <div id="keys">
-                        <p class="keyName">Feed
-                            <input type="text" id="feed" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Freeze
-                            <input type="text" id="freeze" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">DoubleSplit
-                            <input type="text" id="doublesplit" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">TripleSplit
-                            <input type="text" id="triplesplit" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">16x Split
-                            <input type="text" id="16split" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Bot Split
-                            <input type="text" id="botSplit" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Bot Feed
-                            <input type="text" id="botFeed" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Bot Freeze
-                            <input type="text" id="botFreeze" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Bot DoubleSplit
-                            <input type="text" id="botDoubleSplit" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Bot TripleSplit
-                            <input type="text" id="botTripleSplit" class="key" maxlength="1"/>
-                        </p>
-                        <p class="keyName">Bot 16x Split
-                            <input type="text" id="bot16x" class="key" maxlength="1"/>
-                        </p>
-                    </div>
-                </div>      
-            </div>
-        </div>
-    </div>
-    <div id="overlays" style="display: none;">
-        <div id="helloDialog">
-            <div class="form-group">
-                <h2 id="title">Imsolo.pro Web</h2>
-            </div>
-                <div id="play-style-menu" class="play-style-menu-div">
-                    <input id="nick" class="form-control zindex" placeholder="Nickname" maxlength="17">
-                    <button id="play-btn" class="play-btn-pc"><span>Play</span></button>
-                </div>
-            <!-- <p class="newBadge">Savaging players can result in a permanent ban.</p> -->
-            <button id="show-settings-menu-btn" class="btn btn-play btn-primary btn-needs-server btn-info glyphicon glyphicon-cog" onclick="showSettings()"></button>
-            <button id="spectate-btn" onclick="spectate()" class="btn btn-warning btn-spectate btn-needs-server glyphicon glyphicon-eye-open"></button>
-            <button id="gallery-btn" onclick="openSkinsList()" class="btn btn-play btn-primary btn-needs-server btn-info glyphicon glyphicon-picture"></button>
-            <div style="text-align:center;" class="form-group">
-                <input id="skin" class="form-control" placeholder="Skin Name"> 
-            </div>
-            <div id="settings" class="checkbox">
-                <table style="width:100%">
-                    <div style="margin: 6px;" class="control-group">
-                </table>
-                </div>
-                <hr>
-                <div id="footer">
-                    <p>if you want to play on the Original 2015, 2016 and 2017 clients, click here:</p>
-                    <a href="/2015/">
-                        <button id="2015-btn" class="other-gamemode-versions button-client-select">2015</button>
-                    </a>
-                    <a href="/2016/">
-                        <button id="2016-btn" class="other-gamemode-versions button-client-select">2016</button>
-                    </a>
-                    <a href="/2017/">
-                        <button id="2017-btn" class="other-gamemode-versions button-client-select">2017</button>
-                    </a>
-                </div>
-                <div id="rightOptions" class="rightOptions">
-                    <div id="spacegmd">
-                        <br>
-                        <br>
-                    </div>
-                    <div style="margin: 6px;" id="gamemode">
-                        <div>
-                           <!--  <a href="https://fr.surveymonkey.com/r/YMMCTX3">
-                                <button id="2015-btn" class="other-gamemode-versions button-client-select whiteborder">Do you enjoy beta party mode? Click here to help us improving it! Submit your feedback :)</button>
-                            </a><br> -->
-                            <!-- <button class="button-gamemodes-imsolo-style-newmode button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2110')">BETA PARTY MODE V2<img class="img-gamemodes-imsolo-megasplit" src="assets/img/party.png" /></button>
-                            <button class="button-gamemodes-imsolo-style-newmode button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2109')"><span class="newBadge">NEW</span> BETA SELFEED<img class="img-gamemodes-imsolo-megasplit" src="assets/img/party.png" /></button>
-                         -->
-                        </div>
-                        <center>
-                            <table>
-                                <tbody>
-                                    <div class="gamemodesDisplay">
-                                        <button
-                                            class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder"
-                                            onclick="setserver('imsolo.pro:2102')"><span class="newBadge">NEW</span> Mega FFA<img class="img-gamemodes-imsolo-megasplit"
-                                                src="assets/img/party.png" /></button>
-                                    </div>
-                                    <div class="gamemodesDisplay">
-                                        <button class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2110')">BIG BOTS PARTY MODE<img class="img-gamemodes-imsolo-megasplit" src="assets/img/party.png" /></button>
-                                        <button class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2109')"><span class="newBadge">POPULAR</span> SELFEED<img class="img-gamemodes-imsolo-megasplit" src="assets/img/crazyselfeed.png" /></button>
-                                        <button class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2100')"><span class="newBadge">NEW</span>BETA 1v1 SCRIMS<img class="img-gamemodes-imsolo-megasplit" src="assets/img/1v1.png" /></button>
-                                      </div>
-                                  <div class="gamemodesDisplay">
-                                    <button class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4110')">PARTY MEGASPLIT<img class="img-gamemodes-imsolo-megasplit" src="assets/img/megasplit.png" /></button>
-                                    <button class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2108')"><span class="newBadge">POPULAR</span> MEGASPLIT<!--  <span class="newBadge">NEW</span> --><img class="img-gamemodes-imsolo-megasplit" src="assets/img/megasplit.png" /></button>
-                                    <button class="button-gamemodes-imsolo-style-megasplit button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2104')">BETA PARTY MODE<img class="img-gamemodes-imsolo-megasplit" src="assets/img/party.png" /></button>
-                                  </div>
-                                    <tr>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4101')">PARTY MODE<img class="img-gamemodes-imsolo" src="assets/img/party.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:2107')">INSTANT MERGING<img class="img-gamemodes-imsolo" src="assets/img/instant.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4107')">PARTY SELFEED<img class="img-gamemodes-imsolo" src="assets/img/selfeed.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4108')">CRAZY SELFEED<img class="img-gamemodes-imsolo" src="assets/img/crazyselfeed.png" /></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4102')">1V1#1 FFA TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/1v1.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4104')">1V1#2 FFA TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/1v1.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4105')">1V1#3 FFA TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/1v1.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4111')">1V1#1 EXP TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/1v1megasplit.png" /></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4112')">1V1#2 EXP TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/1v1megasplit.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4113')">1V1#3 EXP TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/1v1megasplit.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4103')">2v2 TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/2v2.png" /></button>
-                                        </td>
-                                        <td>&nbsp;
-                                            <button class="button-gamemodes-imsolo-style button-gamemodes-select whiteborder" onclick="setserver('imsolo.pro:4109')">2v2V2 TOURNEY<img class="img-gamemodes-imsolo" src="assets/img/2v2v2.png" /></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </center>
-                        </ul>
-                    </div>
-                </div>
-                <div id="leftOptions" class="leftOptions">
-                    <div id="settings" class="checkbox">
-                        <table style="width:100%">
-                            <div style="margin: 6px;" class="control-group">
-                        </table>
-                            </script-->
-                        <div id="showSettingsDiv" class="div-border-menu control-group">
-                            <br>
-                            <h4>imsolo.pro/web - Changelog</h4>
-                            <br>
-                            <p><span class="newBadge">NEW UPDATE:</span> Custom Keybinds</p>
-                            <p>----------------</p>
-                            <p><span class="newBadge">Macros:</span> Customize your keybinds</p>
-                            <p><span class="newBadge">Lag :</span> Added auto-hide nick to reduce lag</p>
-                            <p>These changes are from : sos#7502</p>
-                            <p>----------------</p>
-                            <p><span class="newBadge">NEW Gamemode:</span> Mega FFA</p>
-                            <p>----------------</p>
-                            <p>- FFA map 4x bigger</p>
-                            <p>- Antiteaming like Agar</p>
-                            <p></p>
-                            <p></p>
-                            <p>Join the discord to give some feedback :)</p>
-                            <div id="instructions">
-                              <hr class="hrMenu">
-                                <center>
-                                    <span class="text-muted">
-                                    Press <b>D</b> for macro doublesplit<br>
-                                    Press <b>Shift</b> for macro sixteen<br>
-                                    <br>
-                                    Press <b>X</b> for bot doublesplit<br>
-                                    Press <b>C</b> for bot sixteen<br>
-                                </span>
-                                </center>
-                            </div>
-                        </div>
-                        </div>  
-                </div>
-        </div>
-        </center>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div id="connecting">
-        <div id="connecting-content">
-            <h2>Connecting</h2>
-            <p> If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.</p>
-        </div>
-    </div>
-    <div id="mobileStuff" style="display: none;">
-        <div id="touchpad"></div>
-        <div id="touchCircle" style="display: none;"></div>
-        <img src="./assets/img/split.png" id="splitBtn">
-        <img src="./assets/img/eject.png" id="ejectBtn">
-        <img src="./assets/img/splitBot.png" id="splitBotBtn">
-        <img src="./assets/img/ejectBot.png" id="ejectBotBtn">
-    </div>
-    <canvas id="canvas" class="chat-style" width="800" height="600"></canvas>
-    <input type="text" id="chat_textbox" placeholder="Press enter to chat" maxlength="50">
-    <div style="font-family:'Ubuntu'">&nbsp;</div>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="overlays" style="display:none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 200;">
+<div id="helloContainer" data-logged-in="0" data-has-account-data="0" data-party-state="0" data-results-state="0" data-gamemode="">
+<div class="side-container">
+<div class="agario-panel agario-side-panel agario-profile-panel">
+<div class="clearfix" style="margin-bottom: 16px;">
+<img class="agario-profile-picture" />
+<div class="agario-profile-name-container">
+<div>
+<div>
+<span class="agario-profile-name"></span>
+</div>
+<div>
+<span class="agario-profile-id"></span>
+</div>
+</div>
+</div>
+</div>
+<div style="position: relative; margin-bottom: -15px;" class="clearfix">
+<div class="agario-exp-bar progress">
+<span class="progress-bar-text"></span>
+<div class="progress-bar progress-bar-striped" style="width: 0%;"></div>
+</div>
+<div class="progress-bar-border"></div>
+<div class="progress-bar-star"></div>
+<div class="agario-upload"></div>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-profile-panel" style="position:relative;">
+<div id="skins" class="flexcroll showskins" style="overflow:auto; float: right; margin-top: 10px; height: 35px; width: 100%; max-height:450px; min-height:110px">
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-profile-panel" style="position:relative;">
+<canvas id="canvasx"></canvas>
+</div>
+</div>
+<div id="mainPanel" class="agario-panel">
+<form role="form">
+<div class="form-group clearfix">
+<center>
+<div class="fb-page" data-href="https://www.facebook.com/Game-For-Fun-681963035265506/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="false"></div>
+</center>
+<div style="float: right; margin-top: 0px; height: 0px;">
+<div>
+</div>
+<div class="clearfix">
+</div>
+</div>
+</div>
+<div class="form-group clearfix">
+<input id="skinname" class="form-control" placeholder="Skin Name" maxlength="15" autofocus />
+<input id="nick" class="form-control" placeholder="Nick" maxlength="15" autofocus />
+<select id="gamemode" class="form-control" onchange="setGameMode($(this).val());" required>
+<option selected value="" data-itr="gamemode_ffa"></option>
+</select>
+</div>
+<div id="locationUnknown">
+<select id="region" class="form-control" onchange="setRegion($('#region').val());" required>
+<option selected disabled value="" data-itr="region_select"></option>
+<option value="VN" data-itr="region_1"></option>
+<option value="HN" data-itr="region_2"></option>
+</select>
+</div>
+<div class="form-group" id="agario-main-buttons">
+<button onclick="$(&#39;#settings, #instructions&#39;).toggle();return false;" class="btn btn-info btn-settings"><i class="glyphicon glyphicon-cog"></i></button>
+<button type="submit" onclick="setNick(_skinname() + document.getElementById('nick').value); return false;" class="btn btn-play btn-primary btn-needs-server" data-itr="play">Play</button>
+<button disabled type="submit" onclick="setNick(_skinname() + document.getElementById('nick').value); return false;" class="btn btn-play-guest btn-success btn-needs-server" data-itr="play_as_guest"></button>
+<button data-toggle="modal" data-target="#modalLoginForm" class="btn btn-login btn-primary" data-original-title="" title="" data-itr="login_and_play">
+<span class="social social-facebook" style="font-size:24px;margin-top:-6px;margin-left:-8px;vertical-align:middle;margin-right:5px; "></span>
+<span></span>
+</button>
+<br clear="both">
+</div>
+<div id="settings" class="checkbox" style="display:none;">
+<div style="float: left; width: 200px;">
+<div id="locationKnown"></div>
+<div id="options" style="margin: 6px; font-size: 12px;">
+<label><input type="checkbox" onchange="setSkins(!$(this).is(':checked'));"><span data-itr="option_no_skins"></span></label>
+<label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"><span data-itr="option_no_names"></span></label>
+<label><input type="checkbox" onchange="setColors($(this).is(':checked'));"><span data-itr="option_no_colors"></span></label>
+<label><input type="checkbox" onchange="setShowMass($(this).is(':checked'));"><span data-itr="option_show_mass"></span></label>
+<label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"><span data-itr="option_dark_theme"></span></label>
+<label><input type="checkbox" onchange="setSkipStats($(this).is(':checked'));"><span data-itr="option_skip_stats"></span></label>
+<label><input type="checkbox" onchange="setHideChat($(this).is(':checked'));"> Hide chat</label>
+</div>
+</div>
+<div style="float: right; width: 120px;">
+<button onclick="spectate(); return false;" disabled class="btn btn-warning btn-spectate btn-needs-server" data-itr="spectate"></button>
+<button onclick="location.href = '/uploads.html';" class="btn btn-primary btn-upload" data-itr="upload"></button>
+<button onclick="logout(); return false;" class="btn btn-danger btn-logout" data-itr="logout"></button>
+</div>
+<br clear="both" />
+</div>
+</form>
+<div id="instructions">
+<hr />
+<center><span class="text-muted">
+<span data-itr="instructions_mouse"></span><br />
+<span data-itr="instructions_space"></span><br />
+<span data-itr="instructions_w"></span><br />
+</span></center>
+</div>
+<hr />
+<center>
+
+<div id="adbg" style="width: 300px; height: 250px;">
+<fieldset id="checkArray">
+<span class="button-checkbox">
+<button type="button" class="btn btn-default cs" data-color="info">🌸</button>
+<input type="checkbox" class="hidden" data-price="10" value="1">
+</span>
+<span class="button-checkbox">
+<button type="button" class="btn btn-default cs" data-color="info">💫</button>
+<input type="checkbox" class="hidden" data-price="2" value="2">
+</span>
+<span class="button-checkbox">
+<button type="button" class="btn btn-default cs" data-color="info">❤️</button>
+<input type="checkbox" class="hidden" data-price="3" value="3">
+</span>
+<span class="button-checkbox">
+<button type="button" class="btn btn-default cs" data-color="info">⚔️</button>
+<input type="checkbox" class="hidden" data-price="5" value="4">
+</span>
+<span class="button-checkbox">
+<button type="button" class="btn btn-default cs" data-color="info">💎</button>
+<input type="checkbox" class="hidden" data-price="7" value="5">
+</span>
+</fieldset>
+<div class="alert alert-success" role="alert">
+Bạn sẽ tốn <i class="alert-link" id="countTurn">0</i> lượt up để đổi
+</div>
+<button type="button" id="btnBuySym" class="btn btn-primary">ĐỒNG Ý</button>
+</div>
+</center>
+</div>
+<div id="stats" style="display: none;" class="agario-panel">
+<h2>
+<center>Match Results</center>
+</h2>
+<canvas id="statsGraph" width="350" height="230"></canvas>
+<div id="statsPelletsContainer">
+<span id="statsText" class="stats-food-eaten"></span>
+<span id="statsSubtext" data-itr="stats_food_eaten"></span>
+</div>
+<div id="statsHighestMassContainer">
+<span id="statsText" class="stats-highest-mass"></span>
+<span id="statsSubtext" data-itr="stats_highest_mass"></span>
+</div>
+<div id="statsTimeAliveContainer">
+<span id="statsText" class="stats-time-alive"></span>
+<span id="statsSubtext" data-itr="stats_time_alive"></span>
+</div>
+<div id="statsTimeLeaderboardContainer">
+<span id="statsText" class="stats-leaderboard-time"></span>
+<span id="statsSubtext" data-itr="stats_leaderboard_time"></span>
+</div>
+<div id="statsPlayerCellsEatenContainer">
+<span id="statsText" class="stats-cells-eaten"></span>
+<span id="statsSubtext" data-itr="stats_cells_eaten"></span>
+</div>
+<div id="statsTopPositionContainer">
+<span id="statsText" class="stats-top-position">?</span>
+<span id="statsSubtext" data-itr="stats_top_position"></span>
+</div>
+<hr style="position:absolute;bottom:350px;width:100%;margin:0px;" />
+<button id="statsContinue" class="btn btn-primary" data-itr="continue" onclick="closeStats();"></button>
+<hr style="position:absolute;bottom:255px;width:100%;" />
+<div id="s300x250">
+
+
+
+</div>
+</div>
+<div class="side-container">
+<div class="agario-party">
+<div class="agario-panel agario-side-panel agario-party-0">
+<h4>
+<center data-itr="party"></center>
+</h4>
+<div style="margin-bottom: 12px;" data-itr="party_description"></div>
+<div class="clearfix" style="margin: 0px -10px 0px -10px;">
+<button class="btn btn-primary" style="width: 102.5px; float: left;" onclick="$('#helloContainer').attr('data-party-state', '3');createParty();" data-itr="create_party"></button>
+<button class="btn btn-primary" style="width: 102.5px; float: right;" onclick="$('#joinPartyToken').val('');$('#helloContainer').attr('data-party-state', '2');" data-itr="join_party"></button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-1">
+<h4>
+<center data-itr="party"></center>
+</h4>
+<div style="margin-bottom: 12px;" data-itr="create_party_instructions"></div>
+<div class="clearfix">
+<input type="text" value="??????" readonly class="partyToken form-control" style="cursor: text; width: 130px; float: left; border-radius: 4px 0px 0px 4px;" />
+<button class="btn btn-primary copy-party-token" style="float: right; width: 60px; border-radius: 0px 4px 4px 0px;">Copy</button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-2">
+<h4>
+<center data-itr="party"></center>
+</h4>
+<div style="margin-bottom: 12px;" data-itr="join_party_instructions"></div>
+<input id="joinPartyToken" type="text" value="" class="form-control" />
+<div class="clearfix" style="margin: 10px -10px 0px -10px;">
+<button class="btn btn-primary" style="width: 210px; float: right;" onclick="joinParty($('#joinPartyToken').val());" data-itr="join_party"></button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-3" style="padding: 0px; overflow: hidden; position: relative;">
+<canvas width="220" height="100" class="cell-spinner" data-size="26"></canvas>
+<div class="creating-party-text" data-itr="creating_party"></div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-4" style="padding: 0px; overflow: hidden; position: relative;">
+<canvas width="220" height="100" class="cell-spinner" data-size="26"></canvas>
+<div class="creating-party-text" data-itr="joining_party"></div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-5">
+<h4>
+<center data-itr="party"></center>
+</h4>
+<div style="margin-bottom: 12px;" data-itr="joined_party_instructions"></div>
+<div class="clearfix">
+<input type="text" value="??????" readonly class="partyToken form-control" style="cursor: text; width: 125px; float: left;" />
+<button class="btn btn-primary copy-party-token" style="float: right; width: 60px;">Copy</button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-6">
+<h4>
+<center data-itr="party"></center>
+</h4>
+<div style="margin-bottom: 12px;" data-itr="party_join_error"></div>
+<div class="clearfix" style="margin: 10px -10px 0px -10px;">
+<button class="btn btn-primary btn-block" onclick="$('#helloContainer').attr('data-party-state', '0');" data-itr="back_button"></button>
+</div>
+</div>
+<div style="position: absolute; right: 10px; top: 4px;">
+<button type="button" class="close" onclick="cancelParty();">&times;</button>
+</div>
+</div>
+<div class="agario-promo" style="padding: 0px; width: 280px; height: 366px; position: relative;     background-color: #FFFFFF;  border-radius: 10px;  ">
+<div style="text-align: center; background-color: rgba(51, 122, 183, 0.59); border-top-left-radius:10px;
+border-top-right-radius:10px; height:10% ">
+<font face="Arial" size="5">Thông Báo</font>
+</div>
+<div style="text-align: center; position: absolute; width: 100%; padding: 5px;">
+<p class="text-info" align="LEFT" style="line-height: 150% ">
+<font face="Arial" size="2">* Server 1: Top 1,2,3 thuế gấp 3 lần, ăn cá chỉ được hưởng 80% Mass, dễ chơi ko team</font>
+</p>
+<p class="text-info" align="LEFT" style="line-height: 150%">
+<font face="Arial" size="2">* Server 2: Top 1,2,3 thuế gấp 5 lần, ăn cá hưởng 100% Mass</font>
+</p>
+<p class="text-info" align="LEFT" style="line-height: 150%">
+<font face="Arial" size="2">* Nếu bạn gặp lỗi có thể inbox trên fanpage</font> <a id='info' href="https://www.facebook.com/Game-For-Fun-681963035265506/" title="" rel="follow, index">tại đây</a>
+</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tosBox">
+<center>
+<a href="/privacy.txt" class="text-muted" data-itr="privacy_policy">Privacy Policy</a>
+|
+<a href="/terms.txt" class="text-muted" data-itr="terms_of_service">Terms of Service</a>
+|
+<a href="/changelog.txt" class="text-muted" data-itr="changelog">Changelog</a>
+</center>
+</div>
+</div>
+<div id="connecting" style="display: none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 100;">
+<div class="connecting-panel" style="width: 350px; background-color: #FFFFFF; margin: auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+<h2 data-itr="connecting"></h2>
+<p data-itr="connect_help"></p>
+</div>
+</div>
+<canvas id="canvas" width="800" height="600"></canvas>
+<input type="text" id="chat_textbox" maxlength="35" placeholder="Enter to chat..." />
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="login-container">
+<div class="login-content">
+<h1 class="login-title">Đăng nhập</h1>
+<div class="social-login"><a class="btn btn-block social-btn facebook social-btn-custom" href="http://choione.xyz/oauth2/authorize/facebook?redirect_uri=https://choi.one"><img src="data:image/png;base64,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" alt="Facebook"> Đăng nhập bằng Facebook</a></div>
+<div class="or-separator"><span class="or-text">HOẶC</span></div>
+<form id="formLogin">
+<div class="form-item"><input type="email" name="email" class="form-control" placeholder="Email" required="" value=""></div>
+<div class="form-item"><input type="password" name="password" class="form-control" placeholder="Password" required="" value=""></div>
+<div class="form-item"><button type="button" class="btn btn-block social-btn-custom btn-primary submitLogin">Login</button></div>
+</form>
+<span class="signup-link">Bạn chưa có tài khoản <a id="signup">Đăng kí ngay!</a></span>
+</div>
+</div>
+</div>
+<div class="modal fade" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="signup-container">
+<div class="signup-content">
+<h1 class="signup-title">Đăng kí tài khoản ChoiOne</h1>
+<form id="formSignUp">
+<div class="form-item"><input type="text" name="name" class="form-control" placeholder="Name" required="" value=""></div>
+<div class="form-item"><input type="email" name="email" class="form-control" placeholder="Email" required="" value=""></div>
+<div class="form-item"><input type="password" name="password" class="form-control" placeholder="Password" required="" value=""></div>
+<div class="form-item"><button type="button" class="btn btn-block btn-primary social-btn-custom submitSignUp">Sign Up</button></div>
+</form>
+<span class="login-link">Bạn đã có tài khoản? <a id="Login">Đăng nhập ngay!</a></span>
+</div>
+</div>
+</div>
+<div class="modal fade" id="modalUpdateForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="signup-container">
+<div class="signup-content">
+<h1 class="signup-title">Cập nhập tài khoản</h1>
+<form id="formUpdate">
+<div class="form-item"><input type="text" name="name" class="form-control updateName" placeholder="Name" required="" value="" disabled></div>
+<div class="form-item"><input type="email" name="email" class="form-control updateEmail" placeholder="Email" required="" value=""></div>
+<div class="form-item"><input type="password" name="password" class="form-control" placeholder="Password" required="" value=""></div>
+<div class="form-item"><button type="button" class="btn btn-block btn-primary social-btn-custom submitUpdate">Cập nhập</button></div>
+</form>
+<span class="login-link">Bạn đã có tài khoản? <a id="Login">Đăng nhập ngay!</a></span>
+</div>
+</div>
+</div>
+
+<div style="font-family:'Ubuntu'">&nbsp;</div>
+<script>
+	
+const API_BASE_URL = 'https://choi.one';
+const ACCESS_TOKEN = 'accessToken';
+const token = this.getUrlParameter('token');
+const error = this.getUrlParameter('error');
+if(token) {
+localStorage.setItem(ACCESS_TOKEN, token);
+window.history.pushState({}, document.title, "/" + "" );
+}else if(error){
+window.history.pushState({}, document.title, "/" + "" );
+alert("Tài khoản của bạn không liên kết với facebook")
+}
+
+
+function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+
+        var results = regex.exec(this.location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+	
+$("#Login").on('click', function(e) {
+	$('#modalLoginForm').modal();
+	$('#modalSignUpForm').modal('hide');
+});	
+$("#signup").on('click', function(e) {
+	$('#modalLoginForm').modal('hide');
+	$('#modalSignUpForm').modal();
+});	
+	
+$(".submitLogin").on('click', function(e) {
+    login(getFormData($("#formLogin")))
+        .then(response => {
+            localStorage.setItem(ACCESS_TOKEN, JSON.parse(response).accessToken);
+            facebookLogin();
+			$('#modalLoginForm').modal('hide');
+        }).catch(error => {
+            alert((error && error.message) || 'Đăng nhập không thành công');
+        });
+});
+
+$(".submitUpdate").on('click', function(e) {
+    update(getFormData($("#formUpdate")))
+        .then(response => {
+			$('#modalUpdateForm').modal('hide');
+        }).catch(error => {
+            alert((error && error.message) || 'Cập nhập không thành công');
+        });
+});
+
+	
+$(".submitSignUp").on('click', function(e) {
+	signup(getFormData($("#formSignUp")))
+        .then(response => {
+                login(getFormData($("#formSignUp")))
+					.then(response => {
+					localStorage.setItem(ACCESS_TOKEN, JSON.parse(response).accessToken);
+					facebookLogin();
+					$('#modalLoginForm').modal('hide');
+					$('#modalSignUpForm').modal('hide');
+				}).catch(error => {
+					alert((error && error.message) || 'Đăng kí không thành công!');
+				});
+        }).catch(error => {
+            alert((error && error.message) || 'Đăng kí không thành công!');            
+        });
+	
+});	
+	
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}	
+
+const request = (options) => {
+    const headers = new Headers({
+        'Content-Type': 'application/json',
+    })
+    
+    if(localStorage.getItem(ACCESS_TOKEN)) {
+        headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN))
+    }
+
+    const defaults = {headers: headers};
+    options = Object.assign({}, defaults, options);
+
+    return fetch(options.url, options)
+    .then(response => 
+        response.text().then(json => {
+            if(!response.ok) {
+                return Promise.reject(json);
+            }
+            return json;
+        })
+    );
+};
+
+ function getCurrentUser() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/user/me",
+        method: 'GET'
+    });
+}
+
+ function login(loginRequest) {
+    return request({
+        url: API_BASE_URL + "/auth/login",
+        method: 'POST',
+        body: JSON.stringify(loginRequest)
+    });
+}
+
+ function signup(signupRequest) {
+    return request({
+        url: API_BASE_URL + "/auth/signup",
+        method: 'POST',
+        body: JSON.stringify(signupRequest)
+    });
+}
+ function update(signupRequest) {
+    return request({
+        url: API_BASE_URL + "/auth/update",
+        method: 'POST',
+        body: JSON.stringify(signupRequest)
+    });
+}	
+	
+	
+
+	
+	
+	
+       $(function() {
+            $('[data-itr]').each(function() {
+                var $this = $(this);
+                var itr = $this.attr('data-itr');
+                $this.html(i18n[itr] || i18n_dict['en'][itr] || itr);
+                //$this.html('');
+            });
+
+            $('.btn-login').tooltip({
+                'html': true,
+                'title': i18n['login_tooltip'],
+                'placement': 'bottom'
+            });
+        }); 
+
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63682874-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+<script>
+        var _img;
+        var setskin_ = "";
+        jQuery(document).ready(function($) {
+            if (location.origin == "http://www.choi.one" || location.origin == "http://choi.one") {
+               window.location.href = "https://choi.one";
+            }
+
+
+            setTimeout(function() {
+                // Other iframes (wrapped with .iframetrack)
+                $('.adsoptimal-slot iframe').iframeTracker({
+                    blurCallback: function() {
+
+
+                        sessionStorage.setItem("click", "true");
+                        console.log("conmeo#@s")
+
+                    },
+                    overCallback: function(element) {
+                        this._overId = $(element).parents('.adsoptimal-slot').attr('id'); // Saving the iframe wrapper id
+                    },
+                    outCallback: function(element) {
+                        this._overId = null; // Reset hover iframe wrapper id
+                    },
+                    _overId: null
+                });
+
+            }, 5000);
+            if (sessionStorage.getItem("click") == "true") {
+                console.log("conmeo#@")
+
+            }
+
+
+
+
+        });
+
+
+
+
+        function imageOnError(img) {
+
+
+
+            $(img).parent().hide();
+
+
+
+            return true;
+        };
+
+        function setskin(name) {
+
+            setskin_ = name;
+            var themeChooser = $('.showskins img');
+            themeChooser.click(function() {
+
+
+                $('.themeSelected').removeClass('themeSelected');
+                if (!themeChooser.hasClass('themeSelected')) {
+                    $(this).addClass('themeSelected');
+                } else {
+                    $(this).removeClass('themeSelected');
+                }
+            });
+
+        };
+
+
+
+
+        $(document).keypress(function(event) {
+
+            if (event.keyCode == '13') {
+
+
+                $('#chat_textbox').select();
+                setTimeout(function() {
+                    document.getElementById("chat_textbox").disabled = false;
+                }, 1);
+
+            }
+
+        });
+
+        var _skinname = function() {
+
+
+
+            if (setskin_ == "") {
+
+
+                return ''
+            } else {
+                return setskin_ + '$';
+            }
+
+
+
+
+        }
+
+        $(function() {
+
+
+            //View cái gì hả cháu....
+			if(location.hostname == "choi.one"){
+			//alert("Hiện tại domain choi.one đang gặp trục trặc đăng nhập facebook. Tạm thời chuyển sang tên miền mới. Xin lỗi sự bất tiện này");
+			//window.location.href = "https://";
+			}
+
+        });
+    </script>
+<script>
+	
+	let arr = [];
+	let arrValue = [];
+	let arrValueBuy = [];
+		let canvasWidth = 180;
+		let canvasHeight = 160;
+		let canvas = null;
+		let ctx = null;
+		let symVar = null;		
+	$('#btnBuySym').attr("disabled", true);	
+		
+		const _2PI = 2.0 * Math.PI;
+		class Planet {
+			constructor(x,y,radius,colour,orbitDistance,orbitSpeed,PI,sym) {
+						this.x = 0;
+						this.y = 0;
+						this.PI = PI;
+						this.sym = sym;
+						this.originX = x;
+						this.originY = y;
+						this.radius = radius;
+						this.colour = colour;
+						this.orbitDistance = orbitDistance ;
+						this.orbitSpeed = orbitSpeed ;
+						this.orbitAngle = 0.0;
+			}
+					
+			tick() {
+						this.orbitAngle += this.orbitSpeed;
+						if (this.orbitAngle > _2PI) {
+							this.orbitAngle = 0.0;
+						}
+						
+						this.x = this.originX + Math.cos(this.orbitAngle + this.PI) * this.orbitDistance;
+						this.y = this.originY + Math.sin(this.orbitAngle + this.PI) * this.orbitDistance;
+			}
+					
+			render(ctx) {
+						//ctx.strokeStyle = "black";
+						//ctx.fillStyle = this.colour;
+						ctx.beginPath();
+						ctx.fillText(this.sym,this.x, this.y);
+						ctx.fill();
+						ctx.stroke();
+						ctx.closePath();
+			}
+		}
+
+			function loop() {
+					ctx.fillStyle = "white";
+					ctx.fillRect(0,0,canvasWidth,canvasHeight);	
+					for(var p = 0 ; p < arr.length ; p++){
+					      arr[p].tick();
+						  arr[p].render(ctx);
+					
+					}
+					requestAnimationFrame(loop);
+				}
+				
+					canvas = document.getElementById("canvasx");
+					canvas.width = canvasWidth;
+					canvas.height = canvasHeight;
+					ctx = canvas.getContext("2d");
+
+					loop();
+	
+			
+
+
+
+
+	var _symUser =  JSON.parse(localStorage.getItem('loginCache')).sym  ;	
+	var symUnicode = {
+                                1: "🌸",
+                                2: "💫",
+                                3: "❤️",
+                                4: "⚔️",
+								5: "💎"
+                            };
+	
+
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();			
+				
+			arrValueBuy = [];
+			arrValue = [];
+			var countTurn = 0;
+			$('input[type=checkbox]').each(function () {
+				if (this.checked) {
+					arrValue.push($(this).val());
+					arrValueBuy.push($(this).val());
+					countTurn += Number($(this).data('price'));
+					console.log("a")
+				}				
+							
+											
+			});
+			if(_symUser != "null" && _symUser != undefined ){
+			arrValue = arrValue.concat(_symUser.split(","));	
+			}
+			arr = [];	
+			for (var p = 0; p < arrValue.length; p++) {						
+					arr.push(new Planet(90,80,5,"blue",60,0.01,(p * _2PI/arrValue.length),symUnicode[arrValue[p]]));
+			}
+			
+			if(countTurn == 0){
+				$('#btnBuySym').attr("disabled", true);
+			}else{
+				$('#btnBuySym').attr("disabled", false);
+			}
+			$('#countTurn').text(countTurn);		
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+          //  if ($button.find('.state-icon').length == 0) {
+          //      $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+         //   }
+        }
+        init();
+    });
+	
+	        $("#btnBuySym").click( function()
+           {
+           
+		   
+			if(Number(JSON.parse(localStorage.getItem('loginCache')).imgcount) < Number($("#countTurn").text())){			
+				alert("Không đủ lượt up");	
+				return;				
+			}
+		   	if(Number($("#countTurn").text())  == 0){			
+				alert("Bạn chưa chọn gì!");	
+				return;				
+			}
+			 var _lstSymId ="";
+			 for(var x = 0;x<arrValueBuy.length;x++){
+					if(x == arrValueBuy.length - 1){
+						_lstSymId += arrValueBuy[x] 
+					}else{
+						_lstSymId += arrValueBuy[x] + ","	
+					}
+								
+			 }
+			console.log(_lstSymId);
+			var fd = new FormData();    
+			fd.append( '_lstSymId', _lstSymId );   
+			$.ajax({
+            type : 'POST',
+            url : "/user/createSym",
+            headers : {
+				Authorization: 'Bearer ' + localStorage.getItem('accessToken')
+            },
+			data: fd,
+			processData: false,
+			contentType: false,
+            success : function(response) {
+				
+				alert("Thành công");
+				location.reload();
+
+            },
+            error : function(xhr, status, error) {
+                alert("Có lỗi xảy ra, liên hệ admin để giải quyết"); 
+                     
+            }
+        });
+			   
+			   
+			   
+           }
+        );
+
+
+</script>
+`
+<script src="minimap.js?v9"></script>
+<script src="maingame.js?v24"></script>
+<img src="mini-map.png" width="150" height="150" id="imgpos" />
 </body>
 </html>
